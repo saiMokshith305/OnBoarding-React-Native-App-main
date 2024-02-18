@@ -9,9 +9,9 @@ import FontSize from "../constants/FontSize";
 
 
   const data = [
-    { label: 'Full Time', value: '1' },
-    { label: 'Part Time', value: '2' },
-    { label: 'Self Employed', value: '3' }
+    { label: 'Car Loan', value: '1' },
+    { label: 'Personal Loan', value: '2' },
+    { label: 'Home Loan', value: '3' }
   ];
 
   const DropdownComponent = ({}) => {
@@ -22,7 +22,7 @@ import FontSize from "../constants/FontSize";
       if (value || isFocus) {
         return (
           <Text style={[styles.label, isFocus && { color: 'blue' }]}>
-            Employment Type
+            Loan Type
           </Text>
         );
       }
@@ -42,7 +42,7 @@ import FontSize from "../constants/FontSize";
           maxHeight={300}
           labelField="label"
           valueField="value"
-          placeholder={!isFocus ? 'Employment Type' : '...'}
+          placeholder={!isFocus ? 'Loan Type' : '...'}
           searchPlaceholder="Search..."
           value={value}
           onFocus={() => setIsFocus(true)}

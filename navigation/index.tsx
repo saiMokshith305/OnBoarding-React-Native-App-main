@@ -13,9 +13,14 @@ import RegisterScreen from "../screens/RegisterScreen";
 import Welcome from "../screens/WelcomeScreen";
 import Additional from '../screens/AdditionalDetails'
 import Financial from '../screens/FinancialDetails'
-import Scan from '../screens/ScanID'
+import Home from '../screens/Home'
+import Profile from "../screens/Profile";
+import Appointment from "../screens/Appointment"
+
 
 import { RootStackParamList } from "../types";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { ImageBackground } from "react-native";
 
 const theme = {
   ...DefaultTheme,
@@ -38,6 +43,8 @@ export default function Navigation() {
  * https://reactnavigation.org/docs/modal
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
+const Tab = createBottomTabNavigator();
+
 
 function RootNavigator() {
   return (
@@ -51,8 +58,18 @@ function RootNavigator() {
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Additional" component={Additional} />
       <Stack.Screen name="Financial" component={Financial} />
-      <Stack.Screen name="Scan" component={Scan} />
+      <Stack.Screen name="Appointment" component={Appointment} />
+      <Stack.Screen name="Home" component={Mytabs} />
 
     </Stack.Navigator>
   );
+}
+
+function Mytabs(){
+  return(
+    <Tab.Navigator>
+      <Tab.Screen name="Dashboard" component={Home}></Tab.Screen>
+      <Tab.Screen name="Profile" component={Profile}></Tab.Screen>
+    </Tab.Navigator>
+  )
 }

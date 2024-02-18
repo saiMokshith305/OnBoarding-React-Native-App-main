@@ -15,9 +15,9 @@ import {
   import { NativeStackScreenProps } from "@react-navigation/native-stack";
   import { RootStackParamList } from "../types";
   import AppTextInput from "../components/AppTextInput";
-import Dropdown from "../components/Dropdown";
+import DropdownApp from "../components/DropdownApp";
   
-  type Props = NativeStackScreenProps<RootStackParamList, "Financial">;
+  type Props = NativeStackScreenProps<RootStackParamList, "Appointment">;
   
   const RegisterScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
     return (
@@ -33,7 +33,7 @@ import Dropdown from "../components/Dropdown";
             }}
           >
             <TouchableOpacity
-              onPress={() => navigate("Additional")}
+              onPress={() => navigate("Home")}
                 style={{
                   padding: Spacing,
                   borderRadius: Spacing / 2,
@@ -49,13 +49,13 @@ import Dropdown from "../components/Dropdown";
               </TouchableOpacity>
             <Text
               style={{
-                fontSize: FontSize.xLarge,
+                fontSize: 24,
                 color: Colors.primary,
                 fontFamily: Font["poppins-bold"],
                 marginVertical: Spacing * 3,
               }}
             >
-              Financial Details
+              Book an appointment
             </Text>
             <Text
               style={{
@@ -65,7 +65,7 @@ import Dropdown from "../components/Dropdown";
                 textAlign: "center",
               }}
             >
-              Unlock Your Financial Future with Fine Financial.!
+              Talk to a Financial specialist!
             </Text>
           </View>
           <View
@@ -73,15 +73,12 @@ import Dropdown from "../components/Dropdown";
               marginVertical: Spacing * 1,
             }}
           >
-            <AppTextInput placeholder="Gross Annual Income" />
-            <AppTextInput placeholder="Other Income" />
-            <AppTextInput placeholder="Monthly Expenses" />
-            <AppTextInput placeholder="Credit Score" />
-            <Dropdown ></Dropdown>
+            <AppTextInput placeholder="Income" />
+            <DropdownApp></DropdownApp>
           </View>
   
           <TouchableOpacity
-          onPress={() => navigate("Home")}
+          onPress={() => navigate("Financial")}
             style={{
               padding: Spacing * 2,
               backgroundColor: Colors.primary,
@@ -104,7 +101,7 @@ import Dropdown from "../components/Dropdown";
                 fontSize: FontSize.large,
               }}
             >
-              Sign up
+              Next
             </Text>
           </TouchableOpacity>
   
