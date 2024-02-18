@@ -16,6 +16,7 @@ import {
   import { RootStackParamList } from "../types";
   import AppTextInput from "../components/AppTextInput";
 import DropdownApp from "../components/DropdownApp";
+import LoanForm from "../components/LoanForm";
   
   type Props = NativeStackScreenProps<RootStackParamList, "Appointment">;
   
@@ -74,7 +75,7 @@ import DropdownApp from "../components/DropdownApp";
             }}
           >
             <AppTextInput placeholder="Income" />
-            <DropdownApp></DropdownApp>
+            <LoanForm></LoanForm>
           </View>
   
           <TouchableOpacity
